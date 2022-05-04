@@ -1,5 +1,5 @@
 """
-WSGI config for backendubicateuc project.
+WSGI config for ubicateuc_backend project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backendubicateuc.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ubicateuc_backend.settings')
 
 application = get_wsgi_application()
