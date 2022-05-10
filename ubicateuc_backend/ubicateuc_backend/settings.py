@@ -69,7 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ubicateuc_backend.wsgi.application'
 
-
+DB_NAME = 'mongodb+srv://ubicateuc:KqCV9CYcZAbR46YZ@ubicateuc.c3jbt.mongodb.net/test'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
