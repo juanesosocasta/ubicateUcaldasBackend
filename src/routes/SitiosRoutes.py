@@ -15,7 +15,7 @@ sitio = APIRouter()
            response_model=list[Sitio]
            )
 async def get_all_sitios():
-    return sitios_all(db.grafos.find())
+    return sitios_all(db.Sitios.find())
 
 
 @sitio.get("/sitios/{id}",
@@ -24,5 +24,11 @@ async def get_all_sitios():
            response_model=Sitio
            )
 async def get_sitio(id: str):
-    grafo = db.grafos.find_one({'_id': ObjectId(id)})
+    grafo = db.Sitios.find_one({'_id': ObjectId(id)})
     return sitio_entity(grafo)
+
+#create new site
+@sitio.post("/sitios")
+async def create_site(new_site : Sitio):
+    response = db.Sitios.insert_one(dict(new_site)).inserted_id
+    return sitio_entity(db.Sitios.find_one({'_id' : response}))

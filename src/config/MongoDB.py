@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 from decouple import config
-
-url = config("MONGODB_URL")
+url = config("MONGOURL")
 coneccion = MongoClient(url)
 db = coneccion.UbicateUC
