@@ -5,11 +5,12 @@ from bson import ObjectId
 
 
 class Sitio(BaseModel):
-    _id: ObjectId
+
+    #_id: ObjectId
     nombre: str
     descripcion: str
-    latitud: str
-    longitud: str
+    latitud: float
+    longitud: float
     tipo: str
     sede: str
-    estado: str
+    estado: bool
