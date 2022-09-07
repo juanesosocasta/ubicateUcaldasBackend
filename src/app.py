@@ -1,4 +1,3 @@
-from this import s
 from fastapi import FastAPI
 from routes.SitiosRoutes import sitio
 from fastapi.middleware.cors import CORSMiddleware

@@ -7,15 +7,18 @@ from bson import ObjectId
 from models.SitiosModel import Sitio
 from schemas.SitioSchema import sitio_entity, sitios_all
 
+
 sitio = APIRouter()
 
 
-@sitio.get("/sitios", tags=["Sitios"], 
+@sitio.get("/sitios",
+           tags=["Sitios"],
            status_code=status.HTTP_200_OK,
            response_model=list[Sitio]
            )
 async def get_all_sitios():
-    return sitios_all(db.grafos.find())
+    all_sitios = db.Sitios.find()
+    return sitios_all(all_sitios)
 
 
 @sitio.get("/sitios/{id}",
@@ -24,5 +27,5 @@ async def get_all_sitios():
            response_model=Sitio
            )
 async def get_sitio(id: str):
-    grafo = db.grafos.find_one({'_id': ObjectId(id)})
-    return sitio_entity(grafo)
+    sitio = db.Sitios.find_one({'_id': ObjectId(id)})
+    return sitio_entity(sitio)
